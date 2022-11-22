@@ -1,5 +1,7 @@
 from django.urls import include, path
 from rest_framework import routers
+from django.conf import settings
+from django.conf.urls.static import static
 from sampleapi.views import PersonViewAPI, PersonListViewAPI, SpeciesViewSet, ImageViewAPI
 
 router = routers.DefaultRouter()
@@ -12,4 +14,4 @@ urlpatterns = [
    path('people/<int:id>', PersonViewAPI.as_view(), name='people'),
    path('images/', ImageViewAPI.as_view(), name='image_list'),
    # path('people/<int:id>', PersonViewAPI.as_view(), name='people')
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
