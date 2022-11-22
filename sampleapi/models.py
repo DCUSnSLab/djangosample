@@ -15,3 +15,6 @@ class Person(models.Model):
     birth_year = models.CharField(max_length=10)
     eye_color = models.CharField(max_length=10)
     species = models.ForeignKey(Species, on_delete=models.DO_NOTHING)
+
+class Image(models.Model):
+    name = models.CharField(max_length=100)
