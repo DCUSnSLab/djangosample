@@ -17,4 +17,5 @@ class Person(models.Model):
     species = models.ForeignKey(Species, on_delete=models.DO_NOTHING)
 
 class Image(models.Model):
-    name = models.CharField(max_length=100)
+    title = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='post_images')
