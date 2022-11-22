@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from sampleapi.models import Person, Species
+from sampleapi.models import Person, Species, Image
 
 class PersonSerializer(serializers.ModelSerializer):
    class Meta:
@@ -10,3 +10,8 @@ class SpeciesSerializer(serializers.ModelSerializer):
    class Meta:
        model = Species
        fields = ('id', 'name', 'classification', 'language')
+
+class ImageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Image
+        fields = '__all__'
